@@ -18,11 +18,11 @@ UserTemplate.propTypes = {
 }
 
 UserTemplate.propTypes = {
-    pageType: PropTypes.oneOf(['note', 'twitter', 'article'])
+    pageType: PropTypes.oneOf(['notes', 'twitters', 'articles'])
   }
   
   UserTemplate.defaultProps = {
-    pageType: 'note',
+    pageType: 'notes',
   }
 
 export default UserTemplate;

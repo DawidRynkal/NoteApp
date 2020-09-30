@@ -34,9 +34,9 @@ const Sidebar = ({ pageType }) => (
     <SidebarWrapper activeColor={pageType}>
         <NavLink to='/'><p>NoteApp</p></NavLink>
         <IconsWrapper>
-            <ButtonIcon exact as={NavLink} to='/notes' icon={write} />
-            <ButtonIcon as={NavLink} to='/article' icon={idea}/>
-            <ButtonIcon as={NavLink} to='/twitter' icon={twitter}/>
+            <ButtonIcon as={NavLink} to='/notes' icon={write} />
+            <ButtonIcon as={NavLink} to='/articles' icon={idea}/>
+            <ButtonIcon as={NavLink} to='/twitters' icon={twitter}/>
         </IconsWrapper>
             <StyledButtonIcon  as={NavLink} to='/login'  icon={logout}/>
     </SidebarWrapper>
@@ -46,11 +46,11 @@ Sidebar.propTypes = {
     pageType: PropTypes.element.isRequired,
 }
 Sidebar.propTypes = {
-    pageType: PropTypes.oneOf(['note', 'twitter', 'article'])
+    pageType: PropTypes.oneOf(['notes', 'twitters', 'articles'])
   }
   
   Sidebar.defaultProps = {
-    pageType: 'note',
+    pageType: 'notes',
   }
 
 export default Sidebar;

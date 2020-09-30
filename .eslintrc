@@ -4,6 +4,8 @@
         "prettier",
         "prettier/react"
     ],
+    "parser": "babel-eslint",
+    
     "env": {
         "jest": true
     },
@@ -11,6 +13,10 @@
         "document": true
     },
     "rules": {
+        "react/state-in-constructor": [
+            0,
+            "never"
+        ],
         "react/jsx-props-no-spreading": 0,
         "import/no-unresolved": 1,
         "import/prefer-default-export": 0,

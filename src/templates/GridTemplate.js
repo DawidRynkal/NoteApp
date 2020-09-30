@@ -38,8 +38,8 @@ const GridTemplate = ({children, pageType}) => (
   <StyledWrapper>
       <StyledPageHeader>
     <Input search placeholder="Search"/>
-    <StyledHeading big as='h1'>{pageType}s</StyledHeading>
-    <StyledParagraph >6 {pageType}s</StyledParagraph>
+    <StyledHeading big as='h1'>{pageType}</StyledHeading>
+    <StyledParagraph >6 {pageType}</StyledParagraph>
       </StyledPageHeader>
     <StyledGrid>
     {children}
@@ -52,11 +52,11 @@ const GridTemplate = ({children, pageType}) => (
 
 GridTemplate.propTypes = {
     children: PropTypes.arrayOf(PropTypes.object).isRequired,
-    pageType: PropTypes.oneOf(['note', 'twitter', 'article'])
+    pageType: PropTypes.oneOf(['notes', 'twitters', 'articles'])
   }
   
   GridTemplate.defaultProps = {
-    pageType: 'note',
+    pageType: 'notes',
   }
 
 export default GridTemplate;
