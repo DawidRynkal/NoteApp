@@ -1,3 +1,15 @@
+
+## App is still under construction
+![Screenshot_4](https://user-images.githubusercontent.com/50556211/95652859-753a8700-0af4-11eb-96ae-403d3fcc79a6.png)
+
+![Screenshot_1](https://user-images.githubusercontent.com/50556211/95652860-75d31d80-0af4-11eb-930d-bb31a05fd0ce.png)
+
+![Screenshot_2](https://user-images.githubusercontent.com/50556211/95652861-766bb400-0af4-11eb-8dfd-6c9407f26c22.png)
+
+![Screenshot_3](https://user-images.githubusercontent.com/50556211/95652858-74095a00-0af4-11eb-89f0-37c792e0ea6a.png)
+
+App built on Adam Romański's course
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
