@@ -1,23 +1,7 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
 import Input from './Input';
 
-export default {
-  title: 'atoms/Input',
-  component: Input,
-};
-
-const Template = (args) => {
-  return (
-    <>
-      <Input {...args} />
-    </>
-  );
-};
-
-export const SearchInput = Template.bind({});
-
-SearchInput.args = {
-  placeholder: 'Search',
-  label: 'searchButton',
-  search: true,
-};
+storiesOf('Atoms/Input', module)
+  .add('Normal', () => <Input placeholder="login" />)
+  .add('Search', () => <Input placeholder="search" search />);

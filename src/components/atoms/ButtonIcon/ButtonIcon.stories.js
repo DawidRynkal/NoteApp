@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import idea from 'assets/icons/idea.svg';
-import logout from 'assets/icons/logout.svg';
-import twitter from 'assets/icons/twitter.svg';
-import plus from 'assets/icons/plus-sign.svg';
-import write from 'assets/icons/write.svg';
+import { storiesOf } from '@storybook/react';
+import bulbIcon from 'assets/icons/bulb.svg';
+import logoutIcon from 'assets/icons/logout.svg';
+import penIcon from 'assets/icons/pen.svg';
+import plusIcon from 'assets/icons/plus.svg';
+import twitterIcon from 'assets/icons/twitter.svg';
 import ButtonIcon from './ButtonIcon';
-
-export default {
-  title: 'atoms/ButtonIcon',
-  component: ButtonIcon,
-};
 
 const YellowBackground = styled.div`
   display: flex;
@@ -21,45 +17,11 @@ const YellowBackground = styled.div`
   background: ${({ theme }) => theme.note};
 `;
 
-const Template = (args) => {
-  return (
-    <>
-      <YellowBackground>
-        <ButtonIcon {...args} />
-      </YellowBackground>
-    </>
-  );
-};
-
-// Each story then reuses that template
-export const Idea = Template.bind({});
-export const Logout = Template.bind({});
-export const Twitter = Template.bind({});
-export const Plus = Template.bind({});
-export const Write = Template.bind({});
-
-Idea.args = {
-  icon: idea,
-  active: true,
-  label: 'idea',
-};
-Logout.args = {
-  icon: logout,
-  active: true,
-  label: 'logout',
-};
-Twitter.args = {
-  icon: twitter,
-  active: true,
-  label: 'twitter',
-};
-Plus.args = {
-  icon: plus,
-  active: true,
-  label: 'plus',
-};
-Write.args = {
-  icon: write,
-  active: true,
-  label: 'write',
-};
+storiesOf('Atoms/ButtonIcon', module)
+  .addDecorator(story => <YellowBackground>{story()}</YellowBackground>)
+  .add('Bulb', () => <ButtonIcon icon={bulbIcon} />)
+  .add('Active', () => <ButtonIcon active icon={bulbIcon} />)
+  .add('Logout', () => <ButtonIcon icon={logoutIcon} />)
+  .add('Pen', () => <ButtonIcon icon={penIcon} />)
+  .add('Plus', () => <ButtonIcon icon={plusIcon} />)
+  .add('Twitter', () => <ButtonIcon icon={twitterIcon} />);
