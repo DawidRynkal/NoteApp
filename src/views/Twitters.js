@@ -6,6 +6,7 @@ import Card from 'components/molecules/Card/Card';
 import { fetchItems } from 'actions';
 
 class Twitters extends Component {
+  
   componentDidMount() {
     const { fetchTwitters } = this.props;
     fetchTwitters();
@@ -45,7 +46,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchTwitters: () => dispatch(fetchItems('twitters')),
+  fetchTwitters: () => dispatch(fetchItems("twitters")),
 });
 
 export default connect(

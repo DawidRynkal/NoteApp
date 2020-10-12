@@ -11,7 +11,7 @@ import Button from 'components/atoms/Button/Button';
 import { routes } from 'routes';
 import { connect } from 'react-redux';
 import { authenticate as authenticateAction } from 'actions';
-import { fetchItems } from '../actions';
+
 
 const StyledForm = styled(Form)`
   display: flex;

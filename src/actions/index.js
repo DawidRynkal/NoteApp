@@ -38,20 +38,24 @@ export const addItem = (itemType, itemContent) => {
   };
 };
 
-export const fetchItems = itemType => (dispatch, getState) => {
+
+
+export const fetchItems =  itemType => 
+(dispatch, getState) => {
   dispatch({ type: FETCH_REQUEST });
 
   return axios
-    .get('http://localhost:9000/api/notes/type', {
+    .get('http://localhost:9000/api/notes/type',
+     {
       params: {
-        type: itemType,
         userID: getState().userID,
+        type: itemType,
+        
       },
     })
     .then(({ data }) => {
       console.log(data)
-      dispatch({
-        type: FETCH_SUCCESS,
+      dispatch({ type: FETCH_SUCCESS,
         payload: {
           data,
           itemType,
@@ -80,3 +84,6 @@ export const authenticate = (username, password) => dispatch => {
       dispatch({ type: AUTH_FAILURE });
     });
 };
+
+
+
