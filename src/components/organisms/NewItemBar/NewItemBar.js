@@ -32,7 +32,7 @@ const StyledForm = styled(Form)`
 `;
 
 const StyledTextArea = styled(Input)`
-  margin: 30px 0 100px;
+  margin: 5px 0 100px;
   border-radius: 20px;
   height: 30vh;
 `;

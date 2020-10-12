@@ -1,54 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import GridTemplate from 'templates/GridTemplate';
 import Card from 'components/molecules/Card/Card';
+import { fetchItems } from 'actions';
 
-const twitters = [
-    {
-        id:1,
-        tittle: 'Cwiakala',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem dignissimos a et vel veritatis, unde doloremque pariatur, fugiat officia soluta molestiae dolorum harum rerum impedit dolorem adipisci. Id, velit?At assumenda recusandae dolor sunt corporis libero ullam perspiciatis rem suscipit quod quidem, nulla, dolorum earum? Odit vero, eius accusamus numquam eaque ex eos dolore voluptatem tempora a. Ad, quo?',
-        twitterName:'cwiakala' ,
-        created: '1 day',
-    },
-    {
-        id:2,
-        tittle: 'Boniek',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem dignissimos a et vel veritatis, dolor sunt corporis libero ullam perspiciatis rem suscipit quod quidem, nulla, dolorum earum? Odit vero, eius accusamus numquam eaque ex eos dolore voluptatem tempora a. Ad, quo?',
-        twitterName: 'BoniekZibi',
-        created: '6 day',
-    },
-    {
-        id:3,
-        tittle: 'Borek',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem dignissimos a et vel veritatis, unde doloremque pariatur, fugiat officia soluta molestiae dolorum harum rerum impedit dolorem adipisci.',
-        twitterName: 'BorekMati',
-        created: '8 day',
-    },
-    {
-        id:4,
-        tittle: 'Borek',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem dignissimos a et vel veritatis, unde doloremque pariatur, fugiat officia soluta molestiae dolorum harum rerum impedit dolorem adipisci.',
-        twitterName: 'BorekMati',
-        created: '8 day',
-    }
-]
+class Twitters extends Component {
+  componentDidMount() {
+    const { fetchTwitters } = this.props;
+    fetchTwitters();
+  }
 
+  render() {
+    const { twitters } = this.props;
 
-const Twitter = () => (
-    <GridTemplate pageType='twitters'> 
-    {twitters.map(({id, tittle, content, twitterName, created}) => 
-    <Card 
-    id={id}
-    cardType='twitters'
-    tittle={tittle}
-    content={content}
-    twitterName={twitterName}
-    created={created}
-    key={id}
-    />
-    )}
-    </GridTemplate>
-   
-);
+    return (
+      <GridTemplate>
+        {twitters.map(({ title, content, twitterName, _id: id }) => (
+          <Card id={id} title={title} content={content} twitterName={twitterName} key={id} />
+        ))}
+      </GridTemplate>
+    );
+  }
+}
 
-export default Twitter;
+Twitters.propTypes = {
+  twitters: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      twitterName: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+Twitters.defaultProps = {
+  twitters: [],
+};
+
+const mapStateToProps = state => {
+  const { twitters } = state;
+  return { twitters };
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchTwitters: () => dispatch(fetchItems('twitters')),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Twitters);
