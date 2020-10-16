@@ -1,3 +1,56 @@
+
+# Note App
+This project was created to learn a lot of new things about the React library. NoteApp allows you to add notes, save your favourite twitter accounts and links to interesting articles.
+
+![Screenshot_1](https://user-images.githubusercontent.com/50556211/96227979-36457f00-0f95-11eb-87f4-8f0a18dd2e66.png)
+
+# Technologies: 
+- React
+- Redux
+- CSS
+- Styled components
+- JavaScript
+- npm
+- AJAX
+- React hooks
+- Context API
+- axios
+
+
+# Setup 
+To run this project, install it locally using npm: 
+```
+$ npm install 
+$ npm start
+$ cd _backend
+$ npm start
+```
+
+# Illustrations: 
+
+### Login page
+
+![Screenshot_4](https://user-images.githubusercontent.com/50556211/96228320-ba980200-0f95-11eb-9f2a-5dd18449861f.png)
+
+### Notes view
+
+![Screenshot_1](https://user-images.githubusercontent.com/50556211/96228427-e1eecf00-0f95-11eb-8ccc-25c7567d1668.png)
+![Screenshot_1](https://user-images.githubusercontent.com/50556211/96229143-ce903380-0f96-11eb-8914-357b46188821.png)
+
+
+### Twitters view
+
+![Screenshot_2](https://user-images.githubusercontent.com/50556211/96228373-cc79a500-0f95-11eb-8ee7-c9899b7215c7.png)
+![Screenshot_2](https://user-images.githubusercontent.com/50556211/96229183-d94ac880-0f96-11eb-9bfa-f80d97b04a78.png)
+
+
+### Articles view
+
+![Screenshot_3](https://user-images.githubusercontent.com/50556211/96228510-f7fc8f80-0f95-11eb-9ff5-621f5cbaf6ee.png)
+![Screenshot_3](https://user-images.githubusercontent.com/50556211/96229211-e10a6d00-0f96-11eb-97e9-8931cc38c6c0.png)
+
+Project based on the course created by Adam Romański.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
