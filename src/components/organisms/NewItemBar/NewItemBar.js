@@ -32,7 +32,7 @@ const StyledForm = styled(Form)`
 `;
 
 const StyledTextArea = styled(Input)`
-  margin: 5px 0 100px;
+  margin: 30px 0 100px;
   border-radius: 20px;
   height: 30vh;
 `;
@@ -45,7 +45,7 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
   <StyledWrapper isVisible={isVisible} activecolor={pageContext}>
     <Heading big>Create new {pageContext}</Heading>
     <Formik
-      initialValues={{ title: '', content: '', articleUrl: '', twitterName: '', created: '' }}
+      initialValues={{ tittle: '', content: '', articleUrl: '', twitterName: '', created: '' }}
       onSubmit={values => {
         addItem(pageContext, values);
         handleClose();
@@ -55,8 +55,8 @@ const NewItemBar = ({ pageContext, isVisible, addItem, handleClose }) => (
         <StyledForm>
           <StyledInput
             type="text"
-            name="title"
-            placeholder="title"
+            name="tittle"
+            placeholder="tittle"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.title}

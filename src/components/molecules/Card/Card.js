@@ -38,11 +38,7 @@ const InnerWrapper = styled.div`
     `}
 `;
 
-const DateInfo = styled(Paragraph)`
-  margin: 0 0 5px;
-  font-weight: ${({ theme }) => theme.bold};
-  font-size: ${({ theme }) => theme.fontSize.xs};
-`;
+
 
 const StyledHeading = styled(Heading)`
   margin: 5px 0 0;
@@ -83,8 +79,7 @@ class Card extends Component {
     const {
       id,
       pageContext,
-      title,
-      created,
+      tittle,
       twitterName,
       articleUrl,
       content,
@@ -99,8 +94,7 @@ class Card extends Component {
     return (
       <StyledWrapper onClick={this.handleCardClick}>
         <InnerWrapper activeColor={pageContext}>
-          <StyledHeading>{title}</StyledHeading>
-          <DateInfo>{created}</DateInfo>
+          <StyledHeading>{tittle}</StyledHeading>
           {pageContext === 'twitters' && (
             <StyledAvatar src={`https://unavatar.now.sh/twitter/${twitterName}`} />
           )}
@@ -118,10 +112,9 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   pageContext: PropTypes.oneOf(['notes', 'twitters', 'articles']),
-  title: PropTypes.string.isRequired,
-  created: PropTypes.string.isRequired,
+  tittle: PropTypes.string.isRequired,
   twitterName: PropTypes.string,
   articleUrl: PropTypes.string,
   content: PropTypes.string.isRequired,

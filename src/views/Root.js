@@ -14,7 +14,7 @@ import RegisterPage from 'views/RegisterPage';
 const Root = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <MainTemplate>
+      <MainTemplate> 
         <Switch>
           <Route exact path={routes.login} component={LoginPage} />
           <Route exact path={routes.register} component={RegisterPage} />

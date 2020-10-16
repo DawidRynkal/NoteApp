@@ -53,19 +53,19 @@ const StyledImage = styled.img`
   border-radius: 50%;
 `;
 
-const DetailsTemplate = ({ pageContext, title, created, content, articleUrl, twitterName }) => (
+const DetailsTemplate = ({ pageContext, tittle, created, content, articleUrl, twitterName }) => (
   <UserPageTemplate>
     <StyledWrapper>
       <StyledPageHeader>
         <StyledHeading big as="h1">
-          {title}
+          {tittle}
         </StyledHeading>
         <StyledParagraph>{created}</StyledParagraph>
       </StyledPageHeader>
       <Paragraph>{content}</Paragraph>
       {pageContext === 'articles' && <StyledLink href={articleUrl}>Open article</StyledLink>}
       {pageContext === 'twitters' && (
-        <StyledImage alt={title} src={`https://avatars.io/twitter/${twitterName}`} />
+        <StyledImage alt={tittle} src={`https://unavatar.now.sh/twitter/${twitterName}`} />
       )}
       <Button as={Link} to={`/${pageContext}`} activecolor={pageContext}>
         save / close
@@ -76,7 +76,7 @@ const DetailsTemplate = ({ pageContext, title, created, content, articleUrl, twi
 
 DetailsTemplate.propTypes = {
   pageContext: PropTypes.oneOf(['notes', 'articles', 'twitters']).isRequired,
-  title: PropTypes.string,
+  tittle: PropTypes.string,
   created: PropTypes.string,
   content: PropTypes.string,
   articleUrl: PropTypes.string,
@@ -84,7 +84,7 @@ DetailsTemplate.propTypes = {
 };
 
 DetailsTemplate.defaultProps = {
-  title: '',
+  tittle: '',
   created: '',
   content: '',
   articleUrl: '',

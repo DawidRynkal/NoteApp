@@ -5,8 +5,8 @@ import GridTemplate from 'templates/GridTemplate';
 import Card from 'components/molecules/Card/Card';
 import { fetchItems } from 'actions';
 
+
 class Twitters extends Component {
-  
   componentDidMount() {
     const { fetchTwitters } = this.props;
     fetchTwitters();
@@ -17,8 +17,14 @@ class Twitters extends Component {
 
     return (
       <GridTemplate>
-        {twitters.map(({ title, content, twitterName, _id: id }) => (
-          <Card id={id} title={title} content={content} twitterName={twitterName} key={id} />
+        {twitters.map(({ tittle, content, twitterName, _id: id }) => (
+          <Card
+            id={id}
+            tittle={tittle}
+            content={content}
+            twitterName={twitterName}
+            key={id}
+          />
         ))}
       </GridTemplate>
     );
@@ -26,12 +32,14 @@ class Twitters extends Component {
 }
 
 Twitters.propTypes = {
+  fetchTwitters: PropTypes.func.isRequired,
   twitters: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
+      tittle: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
       twitterName: PropTypes.string.isRequired,
+     
     }),
   ),
 };
@@ -46,7 +54,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchTwitters: () => dispatch(fetchItems("twitters")),
+  fetchTwitters: () => dispatch(fetchItems('twitters')),
 });
 
 export default connect(

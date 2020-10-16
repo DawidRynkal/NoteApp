@@ -27,11 +27,11 @@ const user = {
       if (err) {
         console.log(err);
         return res.sendStatus(500);
-      } else {
+      } 
         passport.authenticate('local')(req, res, function() {
           res.sendStatus(201);
         });
-      }
+      
     });
   },
 };
